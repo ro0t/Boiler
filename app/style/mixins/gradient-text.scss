@@ -1,0 +1,9 @@
+@mixin gradient-text($from, $to) {
+	background: -webkit-linear-gradient($from, $to);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.gradient-text {
+	@include gradient-text($main, $secondary);
+}

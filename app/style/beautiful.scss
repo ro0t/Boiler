@@ -20,3 +20,4 @@
 @import 'mixins/clearfix'; 			// Usage: @include clearfix || or add class="clearfix"
 @import 'mixins/selection'; 		// Usage: @include selection( $backgroundColor, $textColor );
 @import 'mixins/hairline-border';	// Usage: @include hairline-border || or add class="hairline-border"
+@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) || or add class="gradient-text"
