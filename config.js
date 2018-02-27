@@ -25,7 +25,7 @@ module.exports = env => {
 
     var config = {
         mode: (env === 'dev') ? 'development' : 'production',
-        entry: ['./app/bootstrap.js', './app/style/beautiful.scss'],
+        entry: ['./app/bootstrap.js', './app/style/swag.scss'],
         output: {
             filename: 'app.js',
             path: path.resolve(__dirname, 'public/js')
