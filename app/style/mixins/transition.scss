@@ -1,0 +1,7 @@
+@mixin transition($what: all, $time: $transition-time, $easing: $transition-easing) {
+	transition: $what $time $easing;
+}
+
+.transition {
+	@include transition;
+}

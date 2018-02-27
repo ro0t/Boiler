@@ -1,0 +1,7 @@
+@mixin border-radius($radius: $border-radius) {
+	border-radius: $radius;
+}
+
+.border-radius {
+	@include border-radius; // Default border radius
+}

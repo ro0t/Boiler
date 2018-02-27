@@ -13,15 +13,19 @@
 @import 'config/color-scheme';		// Usage: color: $main, $secondary (-darker/-lighter);
 @import 'config/easing'; 			// Usage: <transitions> <duration> $easingVariable;
 @import 'config/settings';			// Usage: $gutter, $size-header, $size-section-padding.. etc.
+@import 'config/defaults';			// Default configurations, transitions, easings, border-radius.. etc.
 
 /*
 *  -----------------------------------------------------------------------
 *  ⌛️ Save time with mixins & classes
 *  ----------------------------------------------------------------------- */
 @import 'mixins/selection'; 		// Usage: @include selection( $backgroundColor, $textColor );
-@import 'mixins/clearfix'; 			// Usage: @include clearfix 							|| or add class="clearfix"
-@import 'mixins/hairline-border';	// Usage: @include hairline-border 						|| or add class="hairline-border"
-@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) 	|| or add class="gradient-text"
-@import 'mixins/centered';			// Usage: @include centered 							|| or add class="center-content"
-@import 'mixins/pretty-underline';	// Usage: @include pretty-underline 					|| or add class="pretty-underline"
-@import 'mixins/truncate';			// Usage: @include truncate								|| or add class="truncate"
+@import 'mixins/clearfix'; 			// Usage: @include clearfix 										|| or add class="clearfix"
+@import 'mixins/hairline-border';	// Usage: @include hairline-border 									|| or add class="hairline-border"
+@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) 				|| or add class="gradient-text"
+@import 'mixins/centered';			// Usage: @include centered 										|| or add class="center-content"
+@import 'mixins/pretty-underline';	// Usage: @include pretty-underline 								|| or add class="pretty-underline"
+@import 'mixins/truncate';			// Usage: @include truncate											|| or add class="truncate"
+@import 'mixins/transition';		// Usage: @include transition($what, $time, $easing)				|| or add class="transition"
+@import 'mixins/border-radius';		// Usage: @include border-radius($radius)							|| or add class="border-radius"
+@import 'mixins/box-shadow';		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	|| or add class="box-shadow"

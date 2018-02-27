@@ -1,0 +1,7 @@
+@mixin box-shadow($offsetX: $shadow-offset-x, $offsetY: $shadow-offset-y, $radius: $shadow-radius, $color: $shadow-color, $opacity: $shadow-opacity) {
+	$box-shadow: $offsetX $offsetY $radius rgba($color, $opacity);
+}
+
+.box-shadow {
+	@include box-shadow;
+}
