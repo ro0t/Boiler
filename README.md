@@ -5,12 +5,18 @@ Another boilerplate project, but this one has Swag and Emojis 👾 made by https
 *	Swag Sass Framework
 *	Compiled ES6 Javascript
 
+## Configuration
+Before you install and run the webpack compiler, edit the config */app/config/settings.json* and insert your values there,
+you can use settings variables from the json file in the templates.
+
 ## Install and start swaggin'
 ```
 git clone https://github.com/ro0t/Boilertal.git
 cd Boilertal
 yarn
+npm run dev
 ```
+Use *npm run build* for production
 
 ## Stylesheets
 Edit the config files in */app/style/config/* to fit your needs.
