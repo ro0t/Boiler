@@ -1,3 +1,11 @@
 {
-	"title": "Boilertal - Hello World!"
+	"title": "Boilertal - Hello World!",
+	"language": "en",
+	"output": {
+		"cssFileName": "style.css",
+		"jsFileName": "app.js"
+	},
+	"google": {
+		"analyticsId": "GA_TRACKING_ID"
+	}
 }

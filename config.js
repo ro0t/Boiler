@@ -1,5 +1,5 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const settings = require('./app/config/settings.json');
 const HandlebarsPlugin = require('./plugins/handlebars-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -7,18 +7,8 @@ const colors = require('colors/safe');
 const log = (title, data) => console.log(title, data);
 
 const extractPlugin = new ExtractTextPlugin({
-    filename: '../css/style.css'
+    filename: '../css/' + settings.output.cssFileName
 });
-
-// const htmlConfig = {
-//     config: {
-//         lang: 'en',
-//         title: 'Boilertal - Hello world',
-//         analyticsId: 'REPLACE-ME'
-//     },
-//     filename: 'index.html',
-//     template: './app/templates/index.hbs',
-// };
 
 module.exports = env => {
 
@@ -38,7 +28,7 @@ module.exports = env => {
         mode: (env === 'dev') ? 'development' : 'production',
         entry: ['./app/bootstrap.js', './app/style/swag.scss'],
         output: {
-            filename: 'app.js',
+            filename: settings.output.jsFileName,
             path: path.resolve(__dirname, 'public/js')
         },
         module: {
@@ -62,14 +52,12 @@ module.exports = env => {
         },
         plugins: [
             new CleanWebpackPlugin(cleanConfig.paths, cleanConfig.options),
-            // new HtmlWebpackPlugin(htmlConfig),
             extractPlugin,
             new HandlebarsPlugin({
-                // path to hbs entry file(s)
                 entry: path.join(process.cwd(), "app", "templates", "*.hbs"),
                 output: path.join(process.cwd(), "public", "[name].html"),
                 // data passed to main hbs template: `main-template(data)`
-                data: path.join(__dirname, "app/config/settings.json"),
+                data: settings,
                 // globbed path to partials, where folder/filename is unique
                 partials: [
                     path.join(process.cwd(), "app", "templates", "components", "*", "*.hbs")
