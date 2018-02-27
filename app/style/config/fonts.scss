@@ -1,0 +1,30 @@
+/*
+*  -----------------------------------------------------------------------
+*  ⚙️ Set default font
+*  ----------------------------------------------------------------------- */
+$default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-weight-ultra-thin: 100;
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400; // normal
+$font-weight-thicker: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+$font-weight-black: 900;
+
+html, body {
+	font-family: $default;
+	font-weight: $font-weight-regular;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: $headings;
+	font-weight: $font-weight-bold;
+}
+
+input, textarea, button {
+	font-family: inherit;
+}

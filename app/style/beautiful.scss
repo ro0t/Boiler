@@ -8,6 +8,7 @@
 *  -----------------------------------------------------------------------
 *  ⚙️ Configuration files for your project
 *  ----------------------------------------------------------------------- */
+@import 'config/fonts';				// Font configuration and font importing goes here.
 @import 'config/colors'; 			// Usage: color: $colorVariable;
 @import 'config/color-scheme';		// Usage: color: $main, $secondary (-darker/-lighter);
 @import 'config/easing'; 			// Usage: <transitions> <duration> $easingVariable;
@@ -17,7 +18,9 @@
 *  -----------------------------------------------------------------------
 *  ⌛️ Save time with mixins & classes
 *  ----------------------------------------------------------------------- */
-@import 'mixins/clearfix'; 			// Usage: @include clearfix || or add class="clearfix"
 @import 'mixins/selection'; 		// Usage: @include selection( $backgroundColor, $textColor );
-@import 'mixins/hairline-border';	// Usage: @include hairline-border || or add class="hairline-border"
-@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) || or add class="gradient-text"
+@import 'mixins/clearfix'; 			// Usage: @include clearfix 							|| or add class="clearfix"
+@import 'mixins/hairline-border';	// Usage: @include hairline-border 						|| or add class="hairline-border"
+@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) 	|| or add class="gradient-text"
+@import 'mixins/centered';			// Usage: @include centered 							|| or add class="center-content"
+@import 'mixins/pretty-underline';	// Usage: @include pretty-underline 					|| or add class="pretty-underline"
