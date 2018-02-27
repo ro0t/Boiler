@@ -1,0 +1,22 @@
+/*
+*  -----------------------------------------------------------------------
+*  🙏 Vendor CSS (for example Normalize, Animate.css, Bootstrap)
+*  ----------------------------------------------------------------------- */
+@import "../../node_modules/normalize.css/normalize.css";
+
+/*
+*  -----------------------------------------------------------------------
+*  ⚙️ Configuration files for your project
+*  ----------------------------------------------------------------------- */
+@import 'config/colors'; 			// Usage: color: $colorVariable;
+@import 'config/color-scheme';		// Usage: color: $main, $secondary (-darker/-lighter);
+@import 'config/easing'; 			// Usage: <transitions> <duration> $easingVariable;
+@import 'config/settings';			// Usage: $gutter, $size-header, $size-section-padding.. etc.
+
+/*
+*  -----------------------------------------------------------------------
+*  ⌛️ Save time with mixins & classes
+*  ----------------------------------------------------------------------- */
+@import 'mixins/clearfix'; 			// Usage: @include clearfix || or add class="clearfix"
+@import 'mixins/selection'; 		// Usage: @include selection( $backgroundColor, $textColor );
+@import 'mixins/hairline-border';	// Usage: @include hairline-border || or add class="hairline-border"

@@ -1,0 +1,21 @@
+/*
+*  -----------------------------------------------------------------------
+*  A crisp hairline border for different device pixel ratios
+*  ----------------------------------------------------------------------- */
+@mixin hairline-border($class) {
+	box-shadow: 0 0 0 1px;
+
+	@media (min-resolution: 2dppx) {
+	    box-shadow: 0 0 0 0.5px;
+	}
+	@media (min-resolution: 3dppx) {
+	    box-shadow: 0 0 0 0.33333333px;
+	}
+	@media (min-resolution: 4dppx) {
+	    box-shadow: 0 0 0 0.25px;
+	}
+}
+
+.hairline-border {
+	@include hairline-border(hairline-border);
+}

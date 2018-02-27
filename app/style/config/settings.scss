@@ -1,0 +1,27 @@
+/*
+*  -----------------------------------------------------------------------
+*  ⚙️ Gutter sizes - important to keep spacing consistent
+*  ----------------------------------------------------------------------- */
+$gutter: 25px;
+
+$gutter-half: $gutter / 2;
+$gutter-small: $gutter-half;
+
+$gutter-third: $gutter / 3;
+$gutter-tiny: $gutter-third;
+
+$gutter-double: $gutter * 2;
+$gutter-large: $gutter-double;
+
+$gutter-tripple: $gutter * 3;
+$gutter-huge: $gutter-tripple;
+
+/*
+*  -----------------------------------------------------------------------
+*  ⏬ Page sizes & Paddings
+*  ----------------------------------------------------------------------- */
+$size-header: 90px;
+$size-header-mobile: 60px;
+
+$size-section-padding: $gutter * 3;
+$size-section-margin: $gutter-double;
