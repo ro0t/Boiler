@@ -27,6 +27,11 @@ module.exports = env => {
     var config = {
         mode: (env === 'dev') ? 'development' : 'production',
         entry: ['./app/bootstrap.js', './app/style/swag.scss'],
+        devServer: {
+            address: 'localhost',
+            port: 8080,
+            contentBase: path.resolve(__dirname, 'public')
+        },
         output: {
             filename: settings.output.jsFileName,
             path: path.resolve(__dirname, 'public/js')
