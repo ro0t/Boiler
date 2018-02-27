@@ -24,3 +24,4 @@
 @import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) 	|| or add class="gradient-text"
 @import 'mixins/centered';			// Usage: @include centered 							|| or add class="center-content"
 @import 'mixins/pretty-underline';	// Usage: @include pretty-underline 					|| or add class="pretty-underline"
+@import 'mixins/truncate';			// Usage: @include truncate								|| or add class="truncate"
