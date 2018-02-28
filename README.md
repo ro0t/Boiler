@@ -27,7 +27,7 @@ Edit the config files in ***/app/style/config/*** to fit your needs.
 Place your component stylings in ***/app/style/components/*** and load them at the bottom of ***/app/style/swag.scss***.
 
 ## Javascript Code
-All of your javascript should be in ***/app/src/***, and you can import it from the bootstrap file ***/app/bootstrap.js***.
+All of your javascript should be in ***/app/src/*** , and you can import it from the bootstrap file ***/app/bootstrap.js***.
 
 ## The checklist
 In the project you can find a **CHECKLIST.md** file to help you prepare for launching your website.
