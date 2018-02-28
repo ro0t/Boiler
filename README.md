@@ -1,12 +1,16 @@
 # Boilertal
 Another boilerplate project, but this one has Swag and Emojis 👾 made by https://igital.co.
 
-*	Webpack
-*	Swag Sass Framework
-*	Compiled ES6 Javascript
+*	Hot reloading dev server 😍
+*	Swag Sass Framework 💎
+*	Super simple responsive css ⭐️
+*	Compiled ES6 Javascript 😎
+
+## Responsive example
+![Responsive example with Boilertal](example.gif)
 
 ## Configuration
-Before you install and run the webpack compiler, edit the config */app/config/settings.json* and insert your values there,
+Before you install and run the webpack compiler, edit the config ***/app/config/settings.json*** and insert your values there,
 you can use settings variables from the json file in the templates.
 
 ## Install and start swaggin'
@@ -16,14 +20,14 @@ cd Boilertal
 yarn
 npm run dev
 ```
-Use *npm run build* for production
+Use ***npm run build*** for production
 
 ## Stylesheets
-Edit the config files in */app/style/config/* to fit your needs.
-Place your component stylings in */app/style/components/* and load them at the bottom of */app/style/swag.scss*.
+Edit the config files in ***/app/style/config/*** to fit your needs.
+Place your component stylings in ***/app/style/components/*** and load them at the bottom of ***/app/style/swag.scss***.
 
 ## Javascript Code
-All of your javascript should be in */app/src/*, and you can import it from the bootstrap file */app/bootstrap.js*.
+All of your javascript should be in ***/app/src/***, and you can import it from the bootstrap file ***/app/bootstrap.js***.
 
 ## The checklist
 In the project you can find a **CHECKLIST.md** file to help you prepare for launching your website.
