@@ -10,7 +10,7 @@ Another boilerplate project, but this one has Swag and Emojis 👾 made by https
 ![Responsive example with Boilertal](example.gif)
 
 ## Configuration
-Before you install and run the webpack compiler, edit the config ***/app/config/settings.json*** and insert your values there,
+Before you install and run the webpack compiler, edit the config ***/config/settings.json*** and insert your values there,
 you can use settings variables from the json file in the templates.
 
 ## Install and start swaggin'

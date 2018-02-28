@@ -1,5 +1,5 @@
 const path = require('path');
-const settings = require('./app/config/settings.json');
+const settings = require('./config/settings.json');
 const HandlebarsPlugin = require('./plugins/handlebars-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');

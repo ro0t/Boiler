@@ -1,6 +1,7 @@
 const path = require('path');
-const settings = require('./app/config/settings.json');
+const settings = require('./config/settings.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HandlebarsPlugin = require('./plugins/handlebars-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const colors = require('colors/safe');
 const log = (title, data) => console.log(title, data);
@@ -53,6 +54,24 @@ module.exports = env => {
             new HtmlWebpackPlugin({
                 title: settings.title
             })
+            //new HandlebarsPlugin({
+            //     entry: path.join(process.cwd(), "app", "templates", "*.hbs"),
+            //     output: path.join(process.cwd(), "public", "[name].html"),
+            //     // data passed to main hbs template: `main-template(data)`
+            //     data: settings,
+            //     // globbed path to partials, where folder/filename is unique
+            //     partials: [
+            //         path.join(process.cwd(), "app", "templates", "components", "*", "*.hbs")
+            //     ],
+            //     onBeforeSetup: function (Handlebars) {},
+            //     onBeforeAddPartials: function (Handlebars, partialsMap) {},
+            //     onBeforeCompile: function (Handlebars, templateContent) {},
+            //     onBeforeRender: function (Handlebars, data) {},
+            //     onBeforeSave: function (Handlebars, resultHtml, filename) {},
+            //     onDone: function (Handlebars, filename) {
+            //         log(colors.rainbow('Handlebars'), colors.bold(colors.white(">> Built: " + filename)));
+            //     }
+            // })
         ]
     };
 
