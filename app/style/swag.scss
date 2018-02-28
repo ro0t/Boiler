@@ -8,33 +8,39 @@
 *  -----------------------------------------------------------------------
 *  ⚙️ Configuration files for your project
 *  ----------------------------------------------------------------------- */
-@import 'config/fonts';				// Font configuration and font importing goes here.
-@import 'config/colors'; 			// Usage: color: $colorVariable;
-@import 'config/color-scheme';		// Usage: color: $main, $secondary (-darker/-lighter);
-@import 'config/easing'; 			// Usage: <transitions> <duration> $easingVariable;
-@import 'config/settings';			// Usage: $gutter, $size-header, $size-section-padding.. etc.
-@import 'config/defaults';			// Default configurations, transitions, easings, border-radius.. etc.
+@import 'config/fonts',				// Font configuration and font importing goes here.
+		'config/colors', 			// Usage: color: $colorVariable;
+		'config/color-scheme',		// Usage: color: $main, $secondary (-darker/-lighter);
+		'config/easing', 			// Usage: <transitions> <duration> $easingVariable;
+		'config/settings',			// Usage: $gutter, $size-header, $size-section-padding.. etc.
+		'config/defaults',			// Default configurations, transitions, easings, border-radius.. etc.
+		'config/breakpoints';		// Screen size breakpoints configuration
 
 /*
 *  -----------------------------------------------------------------------
 *  ⌛️ Save time with mixins & classes
 *  ----------------------------------------------------------------------- */
-@import 'mixins/selection'; 		// Usage: @include selection( $backgroundColor, $textColor );
-@import 'mixins/clearfix'; 			// Usage: @include clearfix 										div.class="clearfix"
-@import 'mixins/hairline-border';	// Usage: @include hairline-border 									div.class="hairline-border"
-@import 'mixins/gradient-text';		// Usage: @include gradient-text($fromColor, $toColor) 				div.class="gradient-text"
-@import 'mixins/centered';			// Usage: @include centered 										div.class="center-content"
-@import 'mixins/pretty-underline';	// Usage: @include pretty-underline 								div.class="pretty-underline"
-@import 'mixins/truncate';			// Usage: @include truncate											div.class="truncate"
-@import 'mixins/transition';		// Usage: @include transition($what, $time, $easing)				div.class="transition"
-@import 'mixins/border-radius';		// Usage: @include border-radius($radius)							div.class="border-radius"
-@import 'mixins/box-shadow';		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	div.class="box-shadow"
+@import 'mixins/selection', 		// Usage: @include selection( $backgroundColor, $textColor );
+		'mixins/clearfix', 			// Usage: @include clearfix 										div.class="clearfix"
+		'mixins/hairline-border',	// Usage: @include hairline-border 									div.class="hairline-border"
+		'mixins/gradient-text',		// Usage: @include gradient-text($fromColor, $toColor) 				div.class="gradient-text"
+		'mixins/centered',			// Usage: @include centered 										div.class="center-content"
+		'mixins/pretty-underline',	// Usage: @include pretty-underline 								div.class="pretty-underline"
+		'mixins/truncate',			// Usage: @include truncate											div.class="truncate"
+		'mixins/transition',		// Usage: @include transition($what, $time, $easing)				div.class="transition"
+		'mixins/border-radius',		// Usage: @include border-radius($radius)							div.class="border-radius"
+		'mixins/box-shadow',		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	div.class="box-shadow"
+		'mixins/size';				// Usage: See config/breakpoints for size variables to use, usage in comment.
 
 /*
 *  -----------------------------------------------------------------------
 *  🤖 Import your components here!
+*
+*	You can import all components with @import 'components/*'
+*	We recommend against it because it could be a dangerous feature as
+*	CSS is very order dependant.
 *  ----------------------------------------------------------------------- */
-// @import 'components/header';
+@import 'components/hello';
 // @import 'components/navigation';
 // @import 'components/hero';
 // @import 'components/footer';

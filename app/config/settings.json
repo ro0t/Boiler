@@ -1,6 +1,10 @@
 {
 	"title": "Boilertal - Hello World!",
 	"language": "en",
+	"devServer": {
+		"host":"localhost",
+		"port": 8000
+	},
 	"output": {
 		"cssFileName": "style.css",
 		"jsFileName": "app.js"

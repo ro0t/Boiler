@@ -18,20 +18,15 @@ module.exports = env => {
         paths: ['cache', 'public'],
         options: {
             root: __dirname,
-            verbose: (env === 'dev'),
+            verbose: false,
             watch: false,
             allowExternal: false
         }
     };
 
     var config = {
-        mode: (env === 'dev') ? 'development' : 'production',
+        mode: 'production',
         entry: ['./app/bootstrap.js', './app/style/swag.scss'],
-        devServer: {
-            address: 'localhost',
-            port: 8080,
-            contentBase: path.resolve(__dirname, 'public')
-        },
         output: {
             filename: settings.output.jsFileName,
             path: path.resolve(__dirname, 'public/js')
@@ -48,7 +43,7 @@ module.exports = env => {
                     test: /\.scss$/,
                     use: extractPlugin.extract({
                         use: [
-                            { loader: 'css-loader', options: { minimize: (env !== 'dev') } },
+                            { loader: 'css-loader', options: { minimize: true } },
                             { loader: 'sass-loader' }
                         ]
                     })

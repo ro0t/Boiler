@@ -1,0 +1,19 @@
+/*
+*  -----------------------------------------------------------------------
+*  📱 Use these breakpoints when writing responsive CSS
+*
+*	Usage example (see mixins/size):
+*	.foo {
+*	  	color: red;
+*
+*	  	@include size('medium') {
+*	    	color: blue;
+*	  	}
+*	}
+*  ----------------------------------------------------------------------- */
+$breakpoints: (
+	'small': 		(max-width: 360px),		// Mobile size
+	'medium': 		(max-width: 800px),		// Tablet size
+	'large': 		(max-width: 1000px),	// Small desktop
+	'huge': 		(max-width: 1200px)		// Normal desktop
+);
