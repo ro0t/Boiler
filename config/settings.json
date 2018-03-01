@@ -1,6 +1,7 @@
 {
 	"title": "Boilertal - Hello World!",
 	"language": "en",
+	"debug": true,
 	"devServer": {
 		"host":"localhost",
 		"port": 8000

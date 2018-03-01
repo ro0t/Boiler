@@ -1,3 +1,6 @@
-import hello from './src/hello';
+import Application from './src/app';
 
-hello();
+
+let boilerApp = document.registerElement('boiler-app', Application);
+
+document.body.append(new boilerApp());

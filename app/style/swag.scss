@@ -34,13 +34,19 @@
 
 /*
 *  -----------------------------------------------------------------------
+*  Import Layout files
+*  ----------------------------------------------------------------------- */
+@import 'layout/body';
+
+/*
+*  -----------------------------------------------------------------------
 *  🤖 Import your components here!
 *
 *	You can import all components with @import 'components/*'
 *	We recommend against it because it could be a dangerous feature as
 *	CSS is very order dependant.
 *  ----------------------------------------------------------------------- */
-@import 'components/hello';
+@import 'components/boiler-app';
 // @import 'components/navigation';
 // @import 'components/hero';
 // @import 'components/footer';
