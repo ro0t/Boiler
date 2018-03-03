@@ -25,7 +25,14 @@ module.exports = env => {
         entry: ['./app/bootstrap.js', './app/style/swag.scss'],
         devServer: {
             host: settings.devServer.host,
-            port: settings.devServer.port
+            port: settings.devServer.port,
+            filename: 'app.js',
+            historyApiFallback: {
+                rewrites: [
+                    { from: /^\/$/, to: '/index.html' },
+                    { from: /app.js/, to: '/app.js' }
+                ]
+            }
         },
         output: {
             filename: settings.output.jsFileName,

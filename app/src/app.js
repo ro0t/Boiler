@@ -6,19 +6,27 @@ export default class Application extends HTMLElement {
 
 		super();
 
+		this.router = null;
+
 	}
 
-	connectedCallback() {
+	/************************************************************************
+	*
+	*	A router is required to determine which template will be
+	*	rendered into the main container. If you want to use a custom
+	*	router, you'll have to edit the application linker.
+	*
+	************************************************************************/
+	setRouter(router) {
 
-		log('Connected');
-
+		log('Router linked');
+		this.router = router;
+		
 	}
 
 	attachedCallback() {
 
 		log('Application attached');
-		log(1);
-		log('yo', {"lol":"true"});
 
 	}
 

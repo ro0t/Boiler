@@ -1,6 +1,5 @@
+import { link } from './src/boiler/core';
+import Router from './src/boiler/router';
 import Application from './src/app';
 
-
-let boilerApp = document.registerElement('boiler-app', Application);
-
-document.body.append(new boilerApp());
+link(Router, Application);

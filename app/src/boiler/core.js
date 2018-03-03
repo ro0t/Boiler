@@ -1,6 +1,12 @@
-export default function defineBoiler(Application) {
+export function link(Router, Application) {
 
-	window.customElements.define('boiler-app', new Application());
-	//window.document.body.appendChild(Application);
+	let BoilerApplication = document.registerElement('boiler-app', Application);
+	let BoilerInstance = new BoilerApplication();
+
+	// Link the Router to the Application
+	BoilerInstance.setRouter(new Router());
+
+	document.body.append(BoilerInstance);
+
 
 };
