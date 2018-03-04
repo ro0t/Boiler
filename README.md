@@ -18,7 +18,7 @@ Before you install and run the webpack compiler, edit the config ***/config/sett
 ## Install and start swaggin'
 ```
 git clone https://github.com/ro0t/Boiler.git
-cd Boilertal
+cd Boiler
 yarn
 npm run dev
 ```
