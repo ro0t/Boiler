@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<link rel="stylesheet" href="/css/<%= htmlWebpackPlugin.options.outputFiles.css %>">
+	</head>
+	<body>
+		<script src="/<%= htmlWebpackPlugin.options.outputFiles.js %>"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.googleAnalytics %>"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', '<%= htmlWebpackPlugin.options.googleAnalytics %>');
+		</script>
+	</body>
+</html>

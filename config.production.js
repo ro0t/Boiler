@@ -1,13 +1,13 @@
 const path = require('path');
 const settings = require('./config/settings.json');
-const HandlebarsPlugin = require('./plugins/handlebars-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const colors = require('colors/safe');
 const log = (title, data) => console.log(title, data);
 
 const extractPlugin = new ExtractTextPlugin({
-    filename: '../css/' + settings.output.cssFileName
+    filename: 'css/' + settings.output.cssFileName
 });
 
 module.exports = env => {
@@ -29,10 +29,20 @@ module.exports = env => {
         entry: ['./app/bootstrap.js', './app/style/swag.scss'],
         output: {
             filename: settings.output.jsFileName,
-            path: path.resolve(__dirname, 'public/js')
+            path: path.resolve(__dirname, 'public')
         },
         module: {
             rules: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                          scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+                          sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+                        }
+                    }
+                },
                 {
                     test: /\.js$/,
                     exclude: path.resolve(__dirname, './node_modules'),
@@ -53,23 +63,17 @@ module.exports = env => {
         plugins: [
             new CleanWebpackPlugin(cleanConfig.paths, cleanConfig.options),
             extractPlugin,
-            new HandlebarsPlugin({
-                entry: path.join(process.cwd(), "app", "templates", "*.hbs"),
-                output: path.join(process.cwd(), "public", "[name].html"),
-                // data passed to main hbs template: `main-template(data)`
-                data: settings,
-                // globbed path to partials, where folder/filename is unique
-                partials: [
-                    path.join(process.cwd(), "app", "templates", "components", "*", "*.hbs")
-                ],
-                onBeforeSetup: function (Handlebars) {},
-                onBeforeAddPartials: function (Handlebars, partialsMap) {},
-                onBeforeCompile: function (Handlebars, templateContent) {},
-                onBeforeRender: function (Handlebars, data) {},
-                onBeforeSave: function (Handlebars, resultHtml, filename) {},
-                onDone: function (Handlebars, filename) {
-                    log(colors.rainbow('Handlebars'), colors.bold(colors.white(">> Built: " + filename)));
-                }
+            new HtmlWebpackPlugin({
+                title: settings.title,
+                googleAnalytics: settings.analyticsId,
+                outputFiles: {
+                    js: settings.output.jsFileName,
+                    css: settings.output.cssFileName
+                },
+                template: 'app/templates/index.html',
+                filename: './index.html',
+                inject: false,
+                hash: true
             })
         ]
     };

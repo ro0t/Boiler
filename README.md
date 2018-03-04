@@ -15,12 +15,19 @@ Including:
 ## Configuration
 Before you install and run the webpack compiler, edit the config ***/config/settings.json*** and insert your values there.
 
-## Install and start swaggin'
+## Development
+Download the project, install packages with **yarn** or **npm install** and run the dev server.
 ```
 git clone https://github.com/ro0t/Boiler.git
 cd Boiler
 yarn
 npm run dev
+```
+
+## Production
+Assuming you've already installed all the packages, just **run npm run build** and your files should end up in the ***public/*** directory, ready for production use.
+```
+npm run build
 ```
 
 ## Vue Components
