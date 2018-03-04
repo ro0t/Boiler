@@ -33,3 +33,7 @@
 .truncate {
 	@include truncate; // Default truncate
 }
+
+.hover-underline {
+	@include hover-underline; // Default hover-underline
+}

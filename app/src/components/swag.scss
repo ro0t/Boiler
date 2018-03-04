@@ -24,4 +24,5 @@
 		'../../style/mixins/transition',		// Usage: @include transition($what, $time, $easing)				div.class="transition"
 		'../../style/mixins/border-radius',		// Usage: @include border-radius($radius)							div.class="border-radius"
 		'../../style/mixins/box-shadow',		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	div.class="box-shadow"
-		'../../style/mixins/size';				// Usage: See config/breakpoints for size variables to use, usage in comment.
+		'../../style/mixins/size',				// Usage: See config/breakpoints for size variables to use, usage in comment.
+		'../../style/mixins/hover-underline';	// Usage: @include hover-underline($color)							div.class="hover-underline"

@@ -25,12 +25,15 @@ export default {
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
+		text-align: center;
 	}
 
 	h1 {
 		font-size: 2em;
 		font-weight: 100;
 		color: $secondary-lighter;
+		padding: 0;
+		@include hover-underline($secondary);
 
 		@include size('large') {
 			color: lighten($royal, 5%);
@@ -50,6 +53,7 @@ export default {
 		font-size: 1em;
 		font-weight: 300;
 		color: $secondary;
+		padding: 0 $gutter;
 
 		@include size('large') {
 			color: $royal;
@@ -67,7 +71,6 @@ export default {
 
 	h1, h2 {
 		text-align: center;
-		padding: 0 $gutter;
 		@include transition(color, 5s, $easeOutQuart);
 	}
 </style>
