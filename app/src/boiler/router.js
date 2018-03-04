@@ -5,10 +5,16 @@ export default class Router {
 	constructor() {
 
 		this.location = window.location;
-		this.segments = window.location.pathname.split('/');
+		this.segments = this.parseSegments();
 		this.parameters = this.queryParameters();
 
 		log('Route', this);
+
+	}
+
+	parseSegments() {
+
+		return window.location.pathname.split('/').filter(item => (item != ""))
 
 	}
 
@@ -22,7 +28,7 @@ export default class Router {
 
 			q = q.substring(1).split('&');
 
-			q.forEach((item) => {
+			q.filter(q => q[1] !== undefined).forEach(item => {
 
 				item = item.split('=');
 

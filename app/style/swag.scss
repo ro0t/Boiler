@@ -2,52 +2,17 @@
 *  -----------------------------------------------------------------------
 *  🙏 Vendor CSS (for example Normalize, Animate.css, Bootstrap)
 *  ----------------------------------------------------------------------- */
-@import "../../node_modules/normalize.css/normalize.css";
+@import '../../node_modules/normalize.css/normalize.css';
+
+/*
+*	Import the variables and config settings
+*/
+@import '../src/components/swag';
 
 /*
 *  -----------------------------------------------------------------------
-*  ⚙️ Configuration files for your project
+*  Import defaults
 *  ----------------------------------------------------------------------- */
-@import 'config/fonts',				// Font configuration and font importing goes here.
-		'config/colors', 			// Usage: color: $colorVariable;
-		'config/color-scheme',		// Usage: color: $main, $secondary (-darker/-lighter);
-		'config/easing', 			// Usage: <transitions> <duration> $easingVariable;
-		'config/settings',			// Usage: $gutter, $size-header, $size-section-padding.. etc.
-		'config/defaults',			// Default configurations, transitions, easings, border-radius.. etc.
-		'config/breakpoints';		// Screen size breakpoints configuration
-
-/*
-*  -----------------------------------------------------------------------
-*  ⌛️ Save time with mixins & classes
-*  ----------------------------------------------------------------------- */
-@import 'mixins/selection', 		// Usage: @include selection( $backgroundColor, $textColor );
-		'mixins/clearfix', 			// Usage: @include clearfix 										div.class="clearfix"
-		'mixins/hairline-border',	// Usage: @include hairline-border 									div.class="hairline-border"
-		'mixins/gradient-text',		// Usage: @include gradient-text($fromColor, $toColor) 				div.class="gradient-text"
-		'mixins/centered',			// Usage: @include centered 										div.class="center-content"
-		'mixins/pretty-underline',	// Usage: @include pretty-underline 								div.class="pretty-underline"
-		'mixins/truncate',			// Usage: @include truncate											div.class="truncate"
-		'mixins/transition',		// Usage: @include transition($what, $time, $easing)				div.class="transition"
-		'mixins/border-radius',		// Usage: @include border-radius($radius)							div.class="border-radius"
-		'mixins/box-shadow',		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	div.class="box-shadow"
-		'mixins/size';				// Usage: See config/breakpoints for size variables to use, usage in comment.
-
-/*
-*  -----------------------------------------------------------------------
-*  Import Layout files
-*  ----------------------------------------------------------------------- */
-@import 'layout/body';
-
-/*
-*  -----------------------------------------------------------------------
-*  🤖 Import your components here!
-*
-*	You can import all components with @import 'components/*'
-*	We recommend against it because it could be a dangerous feature as
-*	CSS is very order dependant.
-*  ----------------------------------------------------------------------- */
-// @import 'components/boiler-app';
-// @import 'components/navigation';
-// @import 'components/hero';
-// @import 'components/footer';
-// @import 'components/section';
+@import 'default/body';
+@import 'default/fonts';
+@import 'default/classes';

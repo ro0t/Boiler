@@ -8,6 +8,7 @@ export default class Application {
 
 		this.boiler = document.createElement('div');
 		this.boiler.id = 'boiler-application';
+		this.boiler.style.height = '100%';
 		document.body.append(this.boiler);
 
 		return this;
@@ -27,42 +28,25 @@ export default class Application {
 
 	}
 
+	/************************************************************************
+	*
+	*	Render the main Vue component and pass in the middleware data
+	*	that has been set in the bootstrap file.
+	*
+	************************************************************************/
 	render() {
-
-		log('Rendering Main Vue component');
-
 
 		const instance = new Template({
 			propsData: {
-				type: 'main',
-				message: 'Shut the faqqer up!'
+				router: this.router
 			}
 		});
 
-		instance.$slots.default = ['Click me'];
 		instance.$mount();
-
 		this.boiler.append(instance.$el);
 
-	}
+		log('Vue Component Rendered');
 
-	// attachedCallback() {
-	//
-	// 	log('Application attached');
-	// 	this.attachDefaultStyle();
-	//
-	// 	log('Render template from route');
-	// 	this.template = new Template(this.router);
-	//
-	// 	this.append(this.template);
-	//
-	// }
-	//
-	// attachDefaultStyle() {
-	//
-	// 	this.style.display = 'block';
-	// 	this.style.height = '100%';
-	//
-	// }
+	}
 
 }

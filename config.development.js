@@ -1,7 +1,6 @@
 const path = require('path');
 const settings = require('./config/settings.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HandlebarsPlugin = require('./plugins/handlebars-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const colors = require('colors/safe');
 const log = (title, data) => console.log(title, data);
@@ -43,7 +42,13 @@ module.exports = env => {
             rules: [
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader'
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                          scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+                          sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+                        }
+                    }
                 },
                 {
                     test: /\.js$/,
@@ -52,12 +57,21 @@ module.exports = env => {
                     options: { presets: ['env'] }
                 },
                 {
-                    test: /\.scss$/,
-                    use: [
-                        { loader: "style-loader" },
-                        { loader: "css-loader" },
-                        { loader: "sass-loader" }
-                    ]
+                  test: /\.scss$/,
+                  use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                    {
+                      loader: 'sass-resources-loader',
+                      options: {
+                        resources: [
+                            './app/style/swag.scss'
+                        ]
+                      },
+                    },
+                  ],
                 }
             ]
         },

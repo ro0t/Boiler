@@ -1,0 +1,27 @@
+/*
+*  -----------------------------------------------------------------------
+*  ⚙️ Configuration files for your project
+*  ----------------------------------------------------------------------- */
+@import '../../style/config/fonts',				// Font configuration and font importing goes here.
+		'../../style/config/colors', 			// Usage: color: $colorVariable;
+		'../../style/config/color-scheme',		// Usage: color: $main, $secondary (-darker/-lighter);
+		'../../style/config/easing', 			// Usage: <transitions> <duration> $easingVariable;
+		'../../style/config/settings',			// Usage: $gutter, $size-header, $size-section-padding.. etc.
+		'../../style/config/defaults',			// Default configurations, transitions, easings, border-radius.. etc.
+		'../../style/config/breakpoints';		// Screen size breakpoints configuration
+
+/*
+*  -----------------------------------------------------------------------
+*  ⌛️ Save time with mixins & classes
+*  ----------------------------------------------------------------------- */
+@import '../../style/mixins/selection', 		// Usage: @include selection( $backgroundColor, $textColor );
+		'../../style/mixins/clearfix', 			// Usage: @include clearfix 										div.class="clearfix"
+		'../../style/mixins/hairline-border',	// Usage: @include hairline-border 									div.class="hairline-border"
+		'../../style/mixins/gradient-text',		// Usage: @include gradient-text($fromColor, $toColor) 				div.class="gradient-text"
+		'../../style/mixins/centered',			// Usage: @include centered 										div.class="center-content"
+		'../../style/mixins/pretty-underline',	// Usage: @include pretty-underline 								div.class="pretty-underline"
+		'../../style/mixins/truncate',			// Usage: @include truncate											div.class="truncate"
+		'../../style/mixins/transition',		// Usage: @include transition($what, $time, $easing)				div.class="transition"
+		'../../style/mixins/border-radius',		// Usage: @include border-radius($radius)							div.class="border-radius"
+		'../../style/mixins/box-shadow',		// Usage: @include box-shadow($x, $y, $radius, $color, $opacity) 	div.class="box-shadow"
+		'../../style/mixins/size';				// Usage: See config/breakpoints for size variables to use, usage in comment.
