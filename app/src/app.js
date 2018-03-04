@@ -1,13 +1,16 @@
+import Vue from 'vue';
+import Template from './components/main';
 import log from './boiler/logger';
 
-export default class Application extends HTMLElement {
+export default class Application {
 
 	constructor() {
 
-		super();
+		this.boiler = document.createElement('div');
+		this.boiler.id = 'boiler-application';
+		document.body.append(this.boiler);
 
-		this.router = null;
-
+		return this;
 	}
 
 	/************************************************************************
@@ -21,13 +24,45 @@ export default class Application extends HTMLElement {
 
 		log('Router linked');
 		this.router = router;
-		
-	}
-
-	attachedCallback() {
-
-		log('Application attached');
 
 	}
+
+	render() {
+
+		log('Rendering Main Vue component');
+
+
+		const instance = new Template({
+			propsData: {
+				type: 'main',
+				message: 'Shut the faqqer up!'
+			}
+		});
+
+		instance.$slots.default = ['Click me'];
+		instance.$mount();
+
+		this.boiler.append(instance.$el);
+
+	}
+
+	// attachedCallback() {
+	//
+	// 	log('Application attached');
+	// 	this.attachDefaultStyle();
+	//
+	// 	log('Render template from route');
+	// 	this.template = new Template(this.router);
+	//
+	// 	this.append(this.template);
+	//
+	// }
+	//
+	// attachDefaultStyle() {
+	//
+	// 	this.style.display = 'block';
+	// 	this.style.height = '100%';
+	//
+	// }
 
 }

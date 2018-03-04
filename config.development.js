@@ -27,6 +27,7 @@ module.exports = env => {
             host: settings.devServer.host,
             port: settings.devServer.port,
             filename: 'app.js',
+            open: true,
             historyApiFallback: {
                 rewrites: [
                     { from: /^\/$/, to: '/index.html' },
@@ -40,6 +41,10 @@ module.exports = env => {
         },
         module: {
             rules: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader'
+                },
                 {
                     test: /\.js$/,
                     exclude: path.resolve(__dirname, './node_modules'),
@@ -56,29 +61,16 @@ module.exports = env => {
                 }
             ]
         },
+        resolve: {
+            alias: {
+              'vue$': 'vue/dist/vue.esm.js'
+            }
+        },
         plugins: [
             new CleanWebpackPlugin(cleanConfig.paths, cleanConfig.options),
             new HtmlWebpackPlugin({
                 title: settings.title
             })
-            //new HandlebarsPlugin({
-            //     entry: path.join(process.cwd(), "app", "templates", "*.hbs"),
-            //     output: path.join(process.cwd(), "public", "[name].html"),
-            //     // data passed to main hbs template: `main-template(data)`
-            //     data: settings,
-            //     // globbed path to partials, where folder/filename is unique
-            //     partials: [
-            //         path.join(process.cwd(), "app", "templates", "components", "*", "*.hbs")
-            //     ],
-            //     onBeforeSetup: function (Handlebars) {},
-            //     onBeforeAddPartials: function (Handlebars, partialsMap) {},
-            //     onBeforeCompile: function (Handlebars, templateContent) {},
-            //     onBeforeRender: function (Handlebars, data) {},
-            //     onBeforeSave: function (Handlebars, resultHtml, filename) {},
-            //     onDone: function (Handlebars, filename) {
-            //         log(colors.rainbow('Handlebars'), colors.bold(colors.white(">> Built: " + filename)));
-            //     }
-            // })
         ]
     };
 
