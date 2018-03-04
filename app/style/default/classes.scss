@@ -1,0 +1,35 @@
+.border-radius {
+	@include border-radius; // Default border radius
+}
+
+.box-shadow {
+	@include box-shadow; // Default box shadow
+}
+
+.center-content {
+	@include centered; // Center content
+}
+
+.clearfix {
+	@include clearfix; // Clearfix class
+}
+
+.gradient-text {
+	@include gradient-text($main, $secondary); // Default text gradient
+}
+
+.hairline-border {
+	@include hairline-border(hairline-border); // Hairline border
+}
+
+.pretty-underline {
+	@include pretty-underline;	// Pretty text-underline
+}
+
+.transition {
+	@include transition;	// Default transition
+}
+
+.truncate {
+	@include truncate; // Default truncate
+}

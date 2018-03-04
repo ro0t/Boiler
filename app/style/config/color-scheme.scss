@@ -2,12 +2,12 @@
 *  -----------------------------------------------------------------------
 *  😍 Color scheme
 *  ----------------------------------------------------------------------- */
-$main: $emerald; // Set the main color here
-$main-darker: $emerald-shade; // Set the main shade color here
+$main: $paper; // Set the main color here
+$main-darker: $paper-shade; // Set the main shade color here
 $main-lighter: lighten($main, 15%);
 
-$secondary: $avocado; // Set the secondary color here
-$secondary-darker: $avocado-shade; // Set the secondary shade color here
+$secondary: $asphalt; // Set the secondary color here
+$secondary-darker: $asphalt-shade; // Set the secondary shade color here
 $secondary-lighter: lighten($secondary, 15%);
 
 $text: #1D1D1D;
