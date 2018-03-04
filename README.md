@@ -85,5 +85,10 @@ In the project you can find a **CHECKLIST.md** file to help you prepare for laun
 *	[ ] Test your entire website... 🤡
 
 ## Special thanks
-The web penguin Jón Þór for showing me 30 Seconds of CSS. 😍
-Thanks to Atomiks (https://github.com/atomiks/30-seconds-of-css) for all the tips and tricks. ⭐️
+The web penguin **Jón Þór** for showing me 30 Seconds of CSS. 😍
+
+Thanks to **Atomiks** for all the tips and tricks. ⭐️ (https://github.com/atomiks/30-seconds-of-css)
+
+Thanks to Evan You *(true legend)* for making **Vue.js** (https://vuejs.org)
+
+Thanks to the awesome devs of **Webpack** for their super moist bundler (https://webpack.js.org/)
