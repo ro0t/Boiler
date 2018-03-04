@@ -17,7 +17,7 @@ Before you install and run the webpack compiler, edit the config ***/config/sett
 
 ## Development
 Download the project, install packages with **yarn** or **npm install** and run the dev server.
-```
+```ShellSession
 git clone https://github.com/ro0t/Boiler.git
 cd Boiler
 yarn
@@ -26,7 +26,7 @@ npm run dev
 
 ## Production
 Assuming you've already installed all the packages, just **run npm run build** and your files should end up in the ***public/*** directory, ready for production use.
-```
+```ShellSession
 npm run build
 ```
 
@@ -37,7 +37,7 @@ The main component has access to all the middleware supplied in ***app/bootstrap
 ## Stylesheets
 Edit the config files in ***/app/style/config/*** to fit your needs.
 Use styled scoping for Vue components, you can import the **Swag sass framework** to get all the hot mixins and variables like this:
-```
+```Vue
 <style lang="scss" scoped>
 	@import '../swag';
 
@@ -85,7 +85,7 @@ In the project you can find a **CHECKLIST.md** file to help you prepare for laun
 *	[ ] Test your entire website... 🤡
 
 ## Special thanks
-The web penguin **Jón Þór** for showing me 30 Seconds of CSS. 😍
+The web penguin **Jón Þór** for showing me 30 Seconds of CSS. 😍ore t
 
 Thanks to **Atomiks** for all the tips and tricks. ⭐️ (https://github.com/atomiks/30-seconds-of-css)
 
