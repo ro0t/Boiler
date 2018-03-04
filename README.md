@@ -17,7 +17,7 @@ Before you install and run the webpack compiler, edit the config ***/config/sett
 
 ## Development
 Download the project, install packages with **yarn** or **npm install** and run the dev server.
-```ShellSession
+```Shell
 git clone https://github.com/ro0t/Boiler.git
 cd Boiler
 yarn
@@ -26,7 +26,7 @@ npm run dev
 
 ## Production
 Assuming you've already installed all the packages, just **run npm run build** and your files should end up in the ***public/*** directory, ready for production use.
-```ShellSession
+```Shell
 npm run build
 ```
 
