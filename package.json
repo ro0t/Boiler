@@ -6,7 +6,7 @@
   "author": "Adam N. Viðarsson",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config config.development.js --content-base public/",
+    "dev": "webpack-dev-server --config config.development.js --content-base public/ --hot --inline",
     "build": "webpack --config config.production.js --env=production"
   },
   "dependencies": {
