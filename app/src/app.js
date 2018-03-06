@@ -1,51 +1,83 @@
 import Vue from 'vue';
-import Template from './components/main';
 import log from './boiler/logger';
+import Master from './components/master.vue';
 
 export default class Application {
 
 	constructor() {
 
+		// Don't touch this unless you know what ya'll doin' 😇
+		this.applicationId = 'boiler-application';
 		this.boiler = document.createElement('div');
-		this.boiler.id = 'boiler-application';
+		this.boiler.id = this.applicationId;
 		this.boiler.style.height = '100%';
 		document.body.append(this.boiler);
+
+		log('Boiler element appended');
+
+		this.instance = null;
+		this.router = [];
+		this.propsData = {};
 
 		return this;
 	}
 
 	/************************************************************************
 	*
-	*	A router is required to determine which template will be
-	*	rendered into the main container. If you want to use a custom
-	*	router, you'll have to edit the application linker.
+	*	When Vue is used with a modular system we need to tell Vue to
+	*	use plugins, do that in the bootstrap file.
 	*
 	************************************************************************/
-	setRouter(router) {
+	applyPlugin(middleware) {
+		Vue.use(middleware);
 
-		log('Router linked');
-		this.router = router;
-
+		if(middleware.name !== undefined) {
+			log(`Applied ${middleware.name}`);
+		}
 	}
 
 	/************************************************************************
 	*
-	*	Render the main Vue component and pass in the middleware data
-	*	that has been set in the bootstrap file.
+	*	Set the default props data that should be passed into the
+	*	main component.
+	*
+	************************************************************************/
+	setPropsData(props = {}) {
+		this.propsData = props;
+
+		log('Did set props data');
+	}
+
+	/************************************************************************
+	*
+	*	Load your routes into the Boiler framework and Boiler will passed
+	*	them into the Vue Router for you 💙
+	*
+	************************************************************************/
+	setRoutes(routes = {}) {
+		this.router = routes;
+
+		log('Routes have been set');
+	}
+
+	/************************************************************************
+	*
+	*	Render the main Vue component and pass in the middleware and propsData
+	*	data that has been set in the bootstrap file.
 	*
 	************************************************************************/
 	render() {
 
-		const instance = new Template({
-			propsData: {
-				router: this.router
-			}
+		this.instance = new Vue({
+			router: this.router,
+			el: `#${this.applicationId}`,
+			render: h => h(Master, {
+				props: this.propsData
+			})
 		});
 
-		instance.$mount();
-		this.boiler.append(instance.$el);
-
-		log('Vue Component Rendered');
+		log('Vue component attached & rendered');
+		log('Put debug mode to false in production to disable these logs!');
 
 	}
 

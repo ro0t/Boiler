@@ -1,31 +1,27 @@
 <template>
-	<div class="welcome-message">
+	<div class="hello-world">
 		<div>
 			<h1>
-				{{message}}
+				Example Page
 			</h1>
-			<h2>
-				Remove the HelloWorld component to get rid of me and write your own components 🤪
-			</h2>
+			<p>
+				Chupa chups powder lemon drops powder oat cake I love tart. Gingerbread I love wafer. I love gingerbread topping toffee donut tiramisu marshmallow.
+
+Bear claw sweet roll sesame snaps bear claw jelly beans. Cookie cake I love icing ice cream tart tart. Chupa chups lemon drops I love caramels jujubes sugar plum ice cream. Cookie candy canes wafer icing caramels sesame snaps marzipan chocolate cake.
+			</p>
 		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	props: [ 'message' ]
-}
-</script>
-
 <style lang="scss" scoped>
 	@import '../swag';
 
-	div.welcome-message {
+	div.hello-world {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100vh;
 		text-align: center;
+		height: 100vh;
 	}
 
 	h1 {
@@ -33,7 +29,6 @@ export default {
 		font-weight: 100;
 		color: $secondary-lighter;
 		padding: 0;
-		@include hover-underline($secondary);
 
 		@include size('large') {
 			color: lighten($royal, 5%);
@@ -49,22 +44,15 @@ export default {
 		}
 	}
 
-	h2 {
-		font-size: 1em;
+	p {
+		font-size: 14px;
 		font-weight: 300;
 		color: $secondary;
 		padding: 0 $gutter;
-
-		@include size('large') {
-			color: $royal;
-		}
-
-		@include size('medium') {
-			color: $hibiscus;
-		}
+		max-width: 600px;
+		line-height: 24px;
 
 		@include size('small') {
-			color: $carrot;
 			font-size: .9em;
 		}
 	}
