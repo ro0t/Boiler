@@ -1,4 +1,4 @@
-@mixin hover-underline($color: $secondary) {
+@mixin hover-underline($color: inherit) {
 	display: inline-block;
 	position: relative;
 
@@ -10,7 +10,7 @@
 		height: 2px;
 		bottom: -2px;
 		left: 0;
-		color: inherit;
+		color: $color;
 		background-color: currentColor;
 		transform-origin: bottom right;
 		transition: transform $transition-time ease-out;

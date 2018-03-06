@@ -1,5 +1,4 @@
-import Config from '../../../config/settings';
-const { debug } = Config;
+import { debug } from '../../../config/settings';
 
 export default function logger(source, object) {
 
