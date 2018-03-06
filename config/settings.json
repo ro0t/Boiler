@@ -1,5 +1,6 @@
 {
 	"title": "Boiler - Edit config/settings.json!",
+	"url": "https://boiler.js.org",
 	"language": "en",
 	"debug": true,
 	"devServer": {
