@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import log from './boiler/logger';
+import log from './addons/logger';
 import Master from './components/master.vue';
 
 export default class Application {

@@ -37,3 +37,7 @@
 .hover-underline {
 	@include hover-underline; // Default hover-underline
 }
+
+.unselectable {
+	@include unselectable;
+}
