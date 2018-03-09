@@ -1,4 +1,4 @@
-export default function insertElement(applicationId) {
+export default function mainframe(applicationId) {
 
 	let boiler = document.createElement('div');
 

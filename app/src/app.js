@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import log from './framework/logger';
 import insertElement from './framework/element';
+import log from './framework/logger';
 import masterComponent from './components/master.vue';
 
 export default class Application {
