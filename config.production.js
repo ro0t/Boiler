@@ -34,6 +34,17 @@ module.exports = env => {
         module: {
             rules: [
                 {
+                    test: /\.(png|jpg|svg|gif)$/,
+                    use: [{
+                    loader: "file-loader",
+                        options:  {
+                            limit: 10000,
+                            emitFile: true,
+                            useRelativePath: true
+                        }
+                    }]
+                },
+                {
                     test: /\.vue$/,
                     loader: 'vue-loader',
                     options: {

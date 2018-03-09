@@ -1,17 +1,14 @@
 import Vue from 'vue';
-import log from './addons/logger';
-import Master from './components/master.vue';
+import log from './framework/logger';
+import insertElement from './framework/element';
+import masterComponent from './components/master.vue';
 
 export default class Application {
 
 	constructor() {
 
 		// Don't touch this unless you know what ya'll doin' 😇
-		this.applicationId = 'boiler-application';
-		this.boiler = document.createElement('div');
-		this.boiler.id = this.applicationId;
-		this.boiler.style.height = '100%';
-		document.body.append(this.boiler);
+		this.boiler = insertElement('boiler-application');
 
 		log('Boiler element appended');
 
@@ -70,8 +67,8 @@ export default class Application {
 
 		this.instance = new Vue({
 			router: this.router,
-			el: `#${this.applicationId}`,
-			render: h => h(Master, {
+			el: `#${this.boiler.id}`,
+			render: h => h(masterComponent, {
 				props: this.propsData
 			})
 		});
