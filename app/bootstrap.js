@@ -5,13 +5,6 @@ import ApplicationRoutes from './src/http/routes';
 let app = new Application();
 
 /**
-*	Apply all your Vue plugins here, this is just a shortcut for Vue.use.
-*
-*	See: https://vuejs.org/v2/api/#Vue-use
-*/
-app.applyPlugin(VueRouter);
-
-/**
 *	If you want to pass props data to your master layout file,
 *	you can uncomment the line below (app.setPropsData()) and
 *	insert your own values there.

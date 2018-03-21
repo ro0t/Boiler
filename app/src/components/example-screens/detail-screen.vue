@@ -4,12 +4,23 @@
 			<h1>
 				Detail for id: {{$route.params.id}}
 			</h1>
+			<p>Amount of pageChanges: {{ count }}</p>
 			<p>
 				Carrot cake pastry marzipan bonbon. Croissant sweet bear claw donut pastry. Brownie macaroon apple pie marshmallow sesame snaps jelly beans cake tootsie roll. Jelly-o carrot cake gummies sweet roll biscuit marzipan tootsie roll.
 			</p>
 		</div>
 	</div>
 </template>
+
+<script>
+export default {
+	computed: {
+		count() {
+			return this.$store.state.pageChanges
+		}
+	}
+}
+</script>
 
 <style lang="scss" scoped>
 	@import '../swag';

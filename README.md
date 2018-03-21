@@ -4,6 +4,7 @@ Another javascript framework, but this one has Swag, Emojis and Vue! 👾 made b
 
 Including:
 *	Vue.js
+* 	Vue Router and VueX for State management
 *	Hot 🔥 reloading dev server
 *	Swag Sass Framework 💎
 *	Super simple responsive Css ⭐️
@@ -62,9 +63,6 @@ Use styled scoping for Vue components, you can import the **Swag sass framework*
 	}
 </style>
 ```
-
-## Boiler Framework
-Put your websites javascript into ***/app/src/***
 
 ## The checklist
 In the project you can find a **CHECKLIST.md** file to help you prepare for launching your website.
