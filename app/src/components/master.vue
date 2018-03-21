@@ -4,9 +4,10 @@
 
 		<!-- Example navigation bar, replace with your own. -->
 		<nav>
-			<router-link to="/">Home</router-link>
-			<router-link to="/example">Example Page</router-link>
-			<router-link to="/detail/1">Blog Post</router-link>
+			<router-link to="/" v-on:click.native="changePage">Home</router-link>
+			<router-link to="/todos" v-on:click.native="changePage">Todo List</router-link>
+			<router-link to="/example" v-on:click.native="changePage">Example Page</router-link>
+			<router-link to="/detail/1" v-on:click.native="changePage">Blog Post</router-link>
 		</nav>
 
 	  	<!-- DO NOT TOUCH -->
@@ -22,6 +23,11 @@ export default {
 	],
 	components: {
 		// Add components that you want to render in your master layout
+	},
+	methods: {
+		changePage() {
+			this.$store.commit('incrementPageChanges')
+		}
 	}
 }
 </script>

@@ -4,6 +4,7 @@
 			<h1>
 				Example Page
 			</h1>
+			<p>Amount of pageChanges: {{ count }}</p>
 			<p>
 				Chupa chups powder lemon drops powder oat cake I love tart. Gingerbread I love wafer. I love gingerbread topping toffee donut tiramisu marshmallow.
 
@@ -12,6 +13,16 @@ Bear claw sweet roll sesame snaps bear claw jelly beans. Cookie cake I love icin
 		</div>
 	</div>
 </template>
+
+<script>
+export default {
+	computed: {
+		count() {
+			return this.$store.state.pageChanges
+		}
+	}
+}
+</script>
 
 <style lang="scss" scoped>
 	@import '../swag';

@@ -1,4 +1,7 @@
 import Vue from 'vue';
+import Vuex from 'vuex';
+import VueRouter from 'vue-router';
+import store from './stores/example';
 import insertElement from './framework/element';
 import log from './framework/logger';
 import masterComponent from './components/master.vue';
@@ -16,21 +19,23 @@ export default class Application {
 		this.router = [];
 		this.propsData = {};
 
+		// Apply plugins
+		this.applyPlugins();
+
 		return this;
 	}
 
 	/************************************************************************
 	*
 	*	When Vue is used with a modular system we need to tell Vue to
-	*	use plugins, do that in the bootstrap file.
+	*	use some external plugins like State management or a Router.
 	*
 	************************************************************************/
-	applyPlugin(middleware) {
-		Vue.use(middleware);
+	applyPlugins() {
 
-		if(middleware.name !== undefined) {
-			log(`Applied ${middleware.name}`);
-		}
+		Vue.use(Vuex);
+		Vue.use(VueRouter);
+
 	}
 
 	/************************************************************************
@@ -68,6 +73,7 @@ export default class Application {
 		this.instance = new Vue({
 			router: this.router,
 			el: `#${this.boiler.id}`,
+			store: new Vuex.Store(store),
 			render: h => h(masterComponent, {
 				props: this.propsData
 			})
