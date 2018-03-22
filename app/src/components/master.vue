@@ -6,7 +6,7 @@
 		<nav>
 			<router-link to="/" v-on:click.native="changePage">Home</router-link>
 			<router-link to="/todos" v-on:click.native="changePage">Todo List</router-link>
-			<router-link to="/example" v-on:click.native="changePage">Example Page</router-link>
+			<router-link to="/example" v-on:click.native="changePage">Example Request</router-link>
 			<router-link to="/detail/1" v-on:click.native="changePage">Blog Post</router-link>
 		</nav>
 

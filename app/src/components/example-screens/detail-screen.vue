@@ -2,7 +2,7 @@
 	<div class="hello-world">
 		<div>
 			<h1>
-				Detail for id: {{$route.params.id}}
+				Blog detail for id: {{$route.params.id}}
 			</h1>
 			<p>Amount of pageChanges: {{ count }}</p>
 			<p>

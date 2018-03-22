@@ -2,14 +2,18 @@
 	<div class="hello-world">
 		<div>
 			<h1>
-				Example Page
+				Example List of Users
 			</h1>
 			<p>Amount of pageChanges: {{ count }}</p>
-			<p>
-				Chupa chups powder lemon drops powder oat cake I love tart. Gingerbread I love wafer. I love gingerbread topping toffee donut tiramisu marshmallow.
-
-Bear claw sweet roll sesame snaps bear claw jelly beans. Cookie cake I love icing ice cream tart tart. Chupa chups lemon drops I love caramels jujubes sugar plum ice cream. Cookie candy canes wafer icing caramels sesame snaps marzipan chocolate cake.
-			</p>
+			<div>
+				<button @click="fetchUsers" v-bind:class="{ isLoading: loading }">
+					<div class="loader"></div>
+					Fetch users
+				</button>
+			</div>
+			<div>
+				<p class="user" v-for="user in users">{{user.name}}</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -17,9 +21,25 @@ Bear claw sweet roll sesame snaps bear claw jelly beans. Cookie cake I love icin
 <script>
 export default {
 	computed: {
+		users() {
+			return this.$store.state.users
+		},
+		loading() {
+			return this.$store.state.loading
+		},
 		count() {
 			return this.$store.state.pageChanges
 		}
+	},
+	methods: {
+		fetchUsers() {
+			// Dispatch a request to the Store to fetch the users
+			this.$store.dispatch('fetchUsers');
+		}
+	},
+	beforeDestroy() {
+		// Clear the user array before we destroy this component
+		this.$store.commit('clearUsers');
 	}
 }
 </script>
@@ -33,6 +53,47 @@ export default {
 		justify-content: center;
 		text-align: center;
 		height: 100vh;
+	}
+
+	button {
+		background: $asphalt;
+		padding: $gutter / 2 $gutter;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+		color: #fff;
+		@include transition;
+		position: relative;
+
+		.loader {
+		    border: 2px solid #fff; /* Light grey */
+		    border-top: 2px solid $jeans; /* Blue */
+		    border-radius: 50%;
+		    width: 18px;
+		    height: 18px;
+		    animation: spin 2s linear infinite;
+			position: absolute;
+			top: 11px;
+			left: 16px;
+			display: none;
+		}
+
+		&.isLoading {
+			padding-left: $gutter * 2;
+
+			.loader {
+				display: block;
+			}
+		}
+
+		&:hover {
+			background: $asphalt-shade;
+		}
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
 	}
 
 	h1 {
@@ -71,5 +132,23 @@ export default {
 	h1, h2 {
 		text-align: center;
 		@include transition(color, 5s, $easeOutQuart);
+	}
+
+	.user {
+		animation: fadeInUser .6s ease-in;
+		animation-fill-mode: forwards;
+		height: 0;
+		opacity: 0;
+
+		@for $i from 1 through 15 {
+			&:nth-of-type(#{$i}) {
+				animation-delay: #{$i * 60}ms;
+			}
+		}
+	}
+
+	@keyframes fadeInUser {
+		from { opacity: 0; height: 0; }
+		to { opacity: 1; height: auto; }
 	}
 </style>
