@@ -76,7 +76,7 @@ module.exports = env => {
             extractPlugin,
             new HtmlWebpackPlugin({
                 title: settings.title,
-                googleAnalytics: settings.analyticsId,
+                googleAnalytics: settings.google.analyticsId,
                 language: settings.language,
                 outputFiles: {
                     js: settings.output.jsFileName,
